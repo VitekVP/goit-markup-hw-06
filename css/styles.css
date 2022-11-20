@@ -5,7 +5,7 @@
 /* колір геро и футера #2F303A */
 /* колір контактів футера rgba(255, 255, 255, 0.6); */
 /* колір логотип, кнопка, підсвітка #2196F3*/
-/* колір кнопка герой-активна #188CE8 */
+/* колір кнопка активна #188CE8 */
 /* колір фону героя #c4c4c4 */
 /* колір градієнта #2f303a66 */
 /* колір іконок клієнтів #AFB1B8 */
@@ -236,10 +236,15 @@ img {
   color: var(--basic-white-color);
 }
 
-.hero-button {
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
   width: 216px;
   height: 50px;
-  padding: 10px 26px;
+  padding: 0;
 
   font-weight: 700;
   font-size: 16px;
@@ -248,6 +253,7 @@ img {
   color: var(--basic-white-color);
 
   background-color: var(--logo-web);
+  border: none;
   box-shadow: 0px 4px 4px #00000026;
   border-radius: 4px;
   cursor: pointer;
@@ -257,8 +263,8 @@ img {
   transition-timing-function: var(--anim-ft);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.button:hover,
+.button:focus {
   background-color: var(--button-activ-color);
 }
 
@@ -554,6 +560,7 @@ address {
 }
 
 .footer-addresse {
+  width: 231px;
   margin-right: 70px;
 }
 
@@ -562,6 +569,68 @@ address {
 }
 
 .social-link-footer > .social-icon {
+  fill: var(--basic-white-color);
+}
+
+.footer-socials {
+  margin-right: 93px;
+}
+
+.footer-subscription {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.subscription-field {
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 50px;
+  padding: 0 0 0 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  background-color: transparent;
+  border: 1px solid #ffffff4d;
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px #00000026);
+  outline: 1px solid transparent;
+
+  transition-property: border;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
+}
+
+.subscription-field:focus {
+  border: 1px solid var(--logo-web);
+}
+
+.subscription-field::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+  color: #ffffff99;
+}
+
+.subscription-form .subscription-button {
+  gap: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+.subscription-button > svg {
   fill: var(--basic-white-color);
 }
 
@@ -724,6 +793,7 @@ address {
 
   width: 528px;
   height: 581px;
+  padding: 40px;
 
   background: var(--basic-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -756,8 +826,161 @@ address {
   background: var(--basic-white-color);
   border: 1px solid #0000001a;
   cursor: pointer;
+
+  transition-property: fill;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
 }
 
 .modal-btn {
   fill: currentColor;
+}
+
+.modal-btn:hover {
+  fill: var(--logo-web);
+}
+
+.modal-form-title {
+  display: block;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.modal-form-label {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+}
+
+.modal-form-wrapper {
+  position: relative;
+
+  margin-bottom: 10px;
+}
+
+.modal-form-field {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid #21212133;
+  border-radius: 4px;
+  outline: 1px solid transparent;
+
+  transition-property: border;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
+}
+
+.modal-form-field:focus {
+  border: 1px solid var(--logo-web);
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  fill: var(--title-text-color);
+
+  transition-property: fill;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
+}
+
+.modal-form-field:focus + .modal-form-icon {
+  fill: var(--logo-web);
+}
+
+.modal-form-comment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: #212121;
+
+  border: 1px solid #21212133;
+  border-radius: 4px;
+  outline: 1px solid transparent;
+
+  resize: none;
+
+  transition-property: border;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
+}
+
+.modal-form-comment:focus {
+  border: 1px solid var(--logo-web);
+}
+
+.modal-form-comment::placeholder {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: #75757580;
+}
+
+.form-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.form-agreement label {
+  user-select: none;
+}
+
+.modal-form-checkbox {
+  appearance: none;
+
+  width: 16px;
+  height: 15px;
+
+  border: 1px solid var(--primary-text-color);
+  border-radius: 2px;
+
+  background-size: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition-property: border, background-color, background-size;
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-ft);
+}
+
+.modal-form-checkbox:checked {
+  border: transparent;
+  background-color: var(--logo-web);
+  background-size: 11px 8px;
+}
+
+.modal-form-link {
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: var(--logo-web);
+  text-underline-offset: 4px;
+}
+
+.modal-form .modal-form-button {
+  width: 200px;
+  height: 50px;
+
+  border: none;
 }
